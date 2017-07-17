@@ -1,8 +1,8 @@
-#Cowsay Browser Project With React   
+### Cowsay Browser Project With React   
 
-### renders a cow to the DOM using react and cowsay. faker is used to generate a lorem sentence.  
+## renders a cow to the DOM using react and cowsay. faker is used to generate a lorem sentence.  
 
-### to view project in browser:  
+## to view project in browser:  
 
 1. clone project from github:  
     * git clone https://github.com/StephanieDover/lab-26-cowsay.git  
