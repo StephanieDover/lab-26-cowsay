@@ -1,0 +1,11 @@
+$color-primary: #fa7a7a;
+
+* {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+body {
+  background: $color-primary;
+}
