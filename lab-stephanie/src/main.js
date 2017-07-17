@@ -1,6 +1,8 @@
 import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
+import cowsay from 'cowsay-browser';
+import faker from 'faker';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -9,8 +11,8 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <header className="hello-navbar">
-        <h1> counter </h1>
+      <header className="navbar">
+        <h1> Generate Cowsay Lorem </h1>
       </header>
     );
   }
@@ -20,35 +22,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'hello world',
-      count: 0
+      content: 'initial'
     };
-
-    this.lulwat = 'cool';
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    console.log('event', e);
-
-    this.setState(state => {
-      return {
-        count: state.count + 1
-      };
-    });
+    const content = faker.fake('{{lorem.sentence}}');
+    this.setState({ content });
   }
 
   render() {
     return (
       <div>
         <Navbar />
-        <p onClick={this.handleClick}>
-          {' '}counter: {this.state.count}{' '}
-        </p>
-        <p>
-          {' '}{this.lulwat}{' '}
-        </p>
+        <pre>
+          {cowsay.say({ text: this.state.content, e: 'oO', T: 'U' })}{' '}
+        </pre>
+        <button onClick={this.handleClick}>Click Me</button>
       </div>
     );
   }
